@@ -8,6 +8,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
 
+import java.io.IOException;
+
 @SpringBootApplication
 @Slf4j
 public class Application {
@@ -20,7 +22,7 @@ public class Application {
 	}
 
 	@EventListener(ApplicationReadyEvent.class)
-	public void onStart() {
+	public void onStart() throws IOException {
 		log.info("I am ready!!!");
 		exportReportService.export();
 	}

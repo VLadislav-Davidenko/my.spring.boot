@@ -8,6 +8,5 @@ import java.util.List;
 @Value
 public class SrcFolderInfo {
 
-
     List<String> files;
 }
